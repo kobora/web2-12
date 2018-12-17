@@ -1,4 +1,3 @@
-
 phina.globalize();
 
 var SCREEN_WIDTH    = 640;
@@ -40,8 +39,8 @@ phina.define("MainScene", {
       // グリッド上でのインデックス
       var xIndex = i%MAX_PER_LINE;
       var yIndex = Math.floor(i/MAX_PER_LINE);
-      var angle = (360)/BLOCK_NUM*i;
-      var block = Block(angle).addChildTo(this.group).setPosition(100, 100);
+      var angle = (180)/BLOCK_NUM*i;
+      var block = Block(angle).addChildTo(this.group).setPosition(50, 50);
 
       block.x = gridX.span(xIndex) + BOARD_OFFSET_X;
       block.y = gridY.span(yIndex)+BOARD_OFFSET_Y;
@@ -128,7 +127,7 @@ phina.define("MainScene", {
       ball.direction.normalize();
 
       // speed up
-      this.ballSpeed += 1;
+      this.ballSpeed += 5;
 
       // コンボ数をリセット
       this.combo = 0;
